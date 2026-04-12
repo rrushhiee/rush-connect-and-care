@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enquire Now | Rush Connect & Care</title>
+  <meta
+    name="description"
+    content="Contact Rush Connect & Care through the enquiry form."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-lockup">
+        <a href="index.html" class="logo-link" aria-label="Rush Connect & Care home">
+          <img class="brand-logo" src="logo.png" alt="Rush Connect & Care logo">
+        </a>
+        <div>
+          <p class="header-note">PEER SUPPORT FOR MEN</p>
+        </div>
+      </div>
+      <nav class="primary-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#services">Support Areas</a>
+        <a class="nav-link" href="services-pricing.html">Services &amp; Pricing</a>
+        <a class="nav-link" href="using-ndis-plan.html">Using NDIS Plan</a>
+        <a class="nav-link nav-link-cta" href="enquire.html">Enquire</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section enquiry-hero">
+        <div class="section-heading">
+          <p class="eyebrow">Tell me what you need</p>
+          <h1>Enquire Now</h1>
+        </div>
+        <p class="hero-text enquiry-text">
+          Fill in the form below and your enquiry will be sent to
+          <a class="contact-link" href="mailto:rupert.rush@me.com">rupert.rush@me.com</a>.
+        </p>
+      </section>
+
+      <section class="section">
+        <form class="enquiry-form" action="https://formsubmit.co/rupert.rush@me.com" method="POST">
+          <input type="hidden" name="_subject" value="New Rush Connect & Care enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="Thank you for contacting Rush Connect & Care. Your enquiry has been received and Rupert will respond as soon as possible."
+          >
+          <label class="honeypot" aria-hidden="true">
+            Leave this field empty
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+          </label>
+
+          <label class="form-field">
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+
+          <label class="form-field">
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+
+          <label class="form-field">
+            <span>Phone Number</span>
+            <input type="tel" name="phone" autocomplete="tel" required>
+          </label>
+
+          <label class="form-field">
+            <span>City</span>
+            <input type="text" name="city" autocomplete="address-level2" required>
+          </label>
+
+          <label class="form-field">
+            <span>Postcode</span>
+            <input type="text" name="postcode" autocomplete="postal-code" required>
+          </label>
+
+          <label class="form-field">
+            <span>Funding type</span>
+            <select name="funding_type" required>
+              <option value="">Select funding type</option>
+              <option value="Self-managed">Self-managed</option>
+              <option value="Plan-managed">Plan-managed</option>
+              <option value="Private">Private</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label class="form-field form-field-full">
+            <span>Message</span>
+            <textarea name="message" rows="7" required></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Send enquiry</button>
+            <a class="button button-secondary" href="index.html">Back to home</a>
+          </div>
+        </form>
+      </section>
+
+      <section class="section contact-now-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Prefer to speak directly?</p>
+          <h2>Contact Us Now</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Call or SMS</h3>
+            <p><a class="contact-link" href="tel:0423815267">0423 815 267</a></p>
+          </div>
+          <div class="contact-card">
+            <h3>Email</h3>
+            <p><a class="contact-link" href="mailto:rupert.rush@me.com">rupert.rush@me.com</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-block">
+          <p class="footer-title">Rush Connect &amp; Care</p>
+          <p class="footer-copy">
+            Peer support for men with a calm, practical, person-centred approach.
+          </p>
+        </div>
+        <div class="footer-block">
+          <p class="footer-title">Explore</p>
+          <div class="footer-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#services">Support Areas</a>
+            <a href="services-pricing.html">Services &amp; Pricing</a>
+            <a href="using-ndis-plan.html">Using NDIS Plan</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="enquire.html">Enquire Now</a>
+          </div>
+        </div>
+        <div class="footer-block">
+          <p class="footer-title">Contact</p>
+          <div class="footer-links">
+            <a href="tel:0423815267">0423 815 267</a>
+            <a href="mailto:rupert.rush@me.com">rupert.rush@me.com</a>
+            <span class="footer-mini-title">Location</span>
+            <span>Inner &amp; Outer Northern Suburbs</span>
+            <span>Melbourne VIC</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
