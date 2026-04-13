@@ -48,21 +48,12 @@
         </p>
       </section>
 
-      <section class="section">
-        <form class="enquiry-form" action="https://formsubmit.co/rupert.rush@me.com" method="POST">
-  <input type="hidden" name="_subject" value="New Rush Connect & Care enquiry">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://rushconnectandcare.com.au/thank-you.html">
-  <input
-    type="hidden"
-    name="_autoresponse"
-    value="Thank you for contacting Rush Connect & Care. Your enquiry has been received and Rupert will respond as soon as possible."
-  >
-  <label class="honeypot" aria-hidden="true">
-    Leave this field empty
-    <input type="text" name="_honey" tabindex="-1" autocomplete="off">
-  </label>
+  <form class="enquiry-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="c37e1152-91cb-4e6c-8452-8eebfaa3fdb8">
+  <input type="hidden" name="subject" value="New Rush Connect & Care enquiry">
+  <input type="hidden" name="from_name" value="Rush Connect & Care Website">
+  <input type="hidden" name="redirect" value="https://rushconnectandcare.com.au/thank-you.html">
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
 
           <label class="form-field">
             <span>Name</span>
@@ -90,7 +81,6 @@
           </label>
 
           <label class="form-field">
-            <span>Funding type</span>
             <select name="funding_type" required>
               <option value="">Select funding type</option>
               <option value="Self-managed">Self-managed</option>
@@ -109,7 +99,8 @@
             <button class="button button-primary" type="submit">Send enquiry</button>
             <a class="button button-secondary" href="index.html">Back to home</a>
           </div>
-        </form>
+        </form><span>Funding type</span>
+            
       </section>
 
       <section class="section contact-now-panel">
