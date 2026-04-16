@@ -311,6 +311,10 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
+#services .cards {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .pricing-cards {
   align-items: stretch;
 }
@@ -593,6 +597,16 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 6px;
+}
+
+.ndis-enquire-panel {
+  padding-top: 8px;
+  padding-bottom: 12px;
+}
+
+.ndis-enquire-panel .hero-actions {
+  margin-top: 0;
+  justify-content: flex-start;
 }
 
 .notice {
