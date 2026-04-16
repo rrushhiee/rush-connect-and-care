@@ -465,14 +465,16 @@ body {
 }
 
 .site-footer {
+  position: relative;
   padding: 24px clamp(20px, 4vw, 52px) 30px;
   border-top: 1px solid var(--line);
   background: rgba(255, 252, 247, 0.7);
+  overflow: hidden;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr 1fr;
   gap: 22px;
 }
 
@@ -480,6 +482,22 @@ body {
   display: grid;
   gap: 10px;
   align-content: start;
+}
+
+.footer-block-explore {
+  justify-self: end;
+}
+
+.ndis-footer-logo {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(23, 59, 51, 0.08);
+  opacity: 0.92;
 }
 
 .footer-title {
@@ -636,6 +654,10 @@ body {
     justify-content: flex-start;
   }
 
+  .footer-block-explore {
+    justify-self: start;
+  }
+
   .brand-logo {
     width: min(240px, 62vw);
   }
@@ -658,5 +680,12 @@ body {
 
   .button {
     width: 100%;
+  }
+
+  .ndis-footer-logo {
+    width: 46px;
+    height: 46px;
+    left: 14px;
+    bottom: 14px;
   }
 }
