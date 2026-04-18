@@ -1,0 +1,11 @@
+.DS_Store
+
+# Old exports, duplicates, and working artifacts not needed in the website repo
+app-summary.html
+app-summary.pdf
+app-summary.txt
+launch-notes.md
+rush-connect-care-cloudflare.zip
+
+cloudflare-publish 2/
+flyer_extract/
