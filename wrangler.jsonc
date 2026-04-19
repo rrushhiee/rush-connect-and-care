@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "rush-connect-and-care",
+  "compatibility_date": "2026-04-19",
+  "assets": {
+    "directory": "."
+  }
+}

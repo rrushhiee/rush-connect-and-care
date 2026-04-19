@@ -1,0 +1,6 @@
+**/.git
+**/.DS_Store
+**/node_modules
+.gitignore
+launch-notes.md
+rush-connect-care-cloudflare.zip
