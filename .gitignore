@@ -9,3 +9,10 @@ rush-connect-care-cloudflare.zip
 
 cloudflare-publish 2/
 flyer_extract/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
