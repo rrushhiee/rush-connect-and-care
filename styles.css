@@ -7,6 +7,9 @@
   --ink-soft: #44536a;
   --navy: #122c47;
   --teal: #176f79;
+  --teal-muted: #4f8f8d;
+  --teal-deep: #2d6f73;
+  --teal-wash: rgba(79, 143, 141, 0.14);
   --sky: #8ed0d8;
   --coral: #e98a63;
   --gold: #efbf6c;
@@ -92,7 +95,7 @@ body::after {
 .site-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   padding-top: 24px;
   padding-bottom: 18px;
@@ -101,9 +104,9 @@ body::after {
 
 .brand-lockup {
   display: grid;
-  gap: 12px;
-  justify-items: center;
-  text-align: center;
+  gap: 10px;
+  justify-items: start;
+  text-align: left;
 }
 
 .logo-link {
@@ -112,7 +115,7 @@ body::after {
 
 .brand-logo {
   display: block;
-  width: clamp(180px, 22vw, 260px);
+  width: clamp(180px, 20vw, 240px);
   height: auto;
   object-fit: contain;
 }
@@ -120,16 +123,20 @@ body::after {
 .header-note {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   width: fit-content;
+  max-width: 100%;
   margin: 0;
-  padding: 10px 16px;
+  padding: 9px 14px;
   border-radius: 999px;
-  background: rgba(18, 44, 71, 0.08);
-  border: 1px solid rgba(18, 44, 71, 0.1);
-  color: var(--navy);
-  font-size: 0.82rem;
+  background: rgba(233, 138, 99, 0.16);
+  border: 1px solid rgba(233, 138, 99, 0.28);
+  color: #b55c37;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -308,12 +315,15 @@ body::after {
   align-self: start;
   overflow: hidden;
   padding: 24px;
-  background: linear-gradient(180deg, rgba(18, 44, 71, 0.96), rgba(23, 111, 121, 0.92));
+  background:
+    linear-gradient(180deg, rgba(45, 111, 115, 0.96), rgba(79, 143, 141, 0.94));
+  border: 1px solid rgba(79, 143, 141, 0.26);
+  box-shadow: 0 18px 40px rgba(45, 111, 115, 0.16);
   color: #fff;
 }
 
 .hero-panel .card-label {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(245, 235, 224, 0.84);
 }
 
 .hero-panel::after {
@@ -323,7 +333,15 @@ body::after {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background: rgba(239, 191, 108, 0.18);
+  background: rgba(255, 243, 227, 0.2);
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.12), transparent 42%);
+  pointer-events: none;
 }
 
 .hero-list {
@@ -371,11 +389,13 @@ body::after {
 
 .signal-card {
   padding: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(79, 143, 141, 0.08));
+  border-color: rgba(79, 143, 141, 0.2);
 }
 
 .signal-card h2 {
   margin: 0 0 8px;
-  color: var(--teal);
+  color: var(--teal-deep);
   font-size: 0.96rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -696,7 +716,9 @@ body::after {
 }
 
 .cta-panel {
-  background: linear-gradient(135deg, rgba(18, 44, 71, 0.96), rgba(233, 138, 99, 0.9));
+  background: linear-gradient(135deg, rgba(45, 111, 115, 0.95), rgba(79, 143, 141, 0.92));
+  border: 1px solid rgba(79, 143, 141, 0.26);
+  box-shadow: 0 18px 40px rgba(45, 111, 115, 0.14);
   color: #fff;
 }
 
