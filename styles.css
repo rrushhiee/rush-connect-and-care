@@ -186,6 +186,12 @@ body::after {
   padding-bottom: 38px;
 }
 
+.hero-sidebar {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
 .hero-copy h1,
 .enquiry-hero h1,
 .section-heading h2,
@@ -312,7 +318,6 @@ body::after {
 
 .hero-panel {
   position: relative;
-  align-self: start;
   overflow: hidden;
   padding: 24px;
   background:
@@ -344,6 +349,12 @@ body::after {
   pointer-events: none;
 }
 
+.hero-panel-secondary {
+  background:
+    linear-gradient(180deg, rgba(34, 88, 96, 0.95), rgba(67, 129, 132, 0.93));
+  border-color: rgba(142, 208, 216, 0.2);
+}
+
 .hero-list {
   position: relative;
   z-index: 1;
@@ -373,6 +384,11 @@ body::after {
   gap: 18px;
   padding-top: 0;
   padding-bottom: 26px;
+}
+
+.signal-strip-heading {
+  grid-column: 1 / -1;
+  margin-bottom: 4px;
 }
 
 .signal-card,
@@ -829,6 +845,7 @@ body::after {
 @media (max-width: 920px) {
   .site-header,
   .hero,
+  .hero-sidebar,
   .story-grid,
   .secondary-panel,
   .contact-grid,
