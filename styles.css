@@ -243,10 +243,8 @@ body::after {
 .service-list,
 .notice p,
 .footer-copy,
-.panel-note,
 .story-aside p,
 .funding-card li,
-.card-list,
 .footer-links a,
 .footer-links span {
   line-height: 1.72;
@@ -311,8 +309,7 @@ body::after {
 .funding-card,
 .notice,
 .enquiry-form,
-.cta-panel,
-.ndis-badge {
+.cta-panel {
   border-radius: 26px;
   box-shadow: 0 16px 36px rgba(18, 44, 71, 0.06);
 }
@@ -367,16 +364,8 @@ body::after {
 
 .hero-list li::marker,
 .service-list li::marker,
-.funding-card li::marker,
-.card-list li::marker {
+.funding-card li::marker {
   color: var(--gold);
-}
-
-.panel-note {
-  position: relative;
-  z-index: 1;
-  margin: 18px 0 0;
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .signal-strip {
@@ -410,7 +399,7 @@ body::after {
   border-color: var(--line);
 }
 
-.signal-card h2 {
+.signal-card-title {
   margin: 0 0 8px;
   color: var(--teal-deep);
   font-size: 0.96rem;
@@ -422,6 +411,18 @@ body::after {
 .signal-card p {
   margin: 0;
   color: var(--ink);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .section {
@@ -458,7 +459,6 @@ body::after {
 }
 
 .story-grid,
-.secondary-panel,
 .contact-grid,
 .cards,
 .funding-grid,
@@ -485,7 +485,6 @@ body::after {
 .notice p,
 .footer-copy,
 .funding-card ul,
-.card-list,
 .story-aside p {
   margin: 0;
   color: var(--ink-soft);
@@ -606,46 +605,17 @@ body::after {
   font-size: 1.04rem;
 }
 
-.secondary-panel {
-  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.72fr);
-  align-items: stretch;
-}
-
-.secondary-copy {
-  display: grid;
-  gap: 18px;
-}
-
 .service-panel {
   padding-top: 24px;
   padding-bottom: 24px;
 }
 
 .service-list,
-.funding-card ul,
-.card-list {
+.funding-card ul {
   display: grid;
   gap: 10px;
   margin: 0;
   padding-left: 18px;
-}
-
-.ndis-badge {
-  align-self: start;
-  display: grid;
-  align-content: start;
-  gap: 10px;
-  padding: 20px 24px 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(142, 208, 216, 0.16));
-  border: 1px solid rgba(18, 44, 71, 0.08);
-}
-
-.ndis-inline-logo {
-  width: 72px;
-  height: 72px;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 12px 24px rgba(18, 44, 71, 0.08);
 }
 
 .contact-grid {
@@ -848,7 +818,6 @@ body::after {
   .hero,
   .hero-sidebar,
   .story-grid,
-  .secondary-panel,
   .contact-grid,
   .funding-grid,
   .footer-grid,
