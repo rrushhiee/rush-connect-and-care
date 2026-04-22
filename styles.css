@@ -1,8 +1,8 @@
 :root {
   --bg: #fff8f1;
   --bg-deep: #f1e4d4;
-  --surface: rgba(255, 253, 249, 0.88);
-  --surface-strong: #fffdfa;
+  --surface: rgba(245, 236, 225, 0.92);
+  --surface-strong: #f9f0e5;
   --ink: #243126;
   --ink-soft: #667164;
   --navy: #2f4b3a;
@@ -68,7 +68,7 @@ body::after {
   z-index: 1;
   width: min(1180px, calc(100% - 32px));
   margin: 18px auto 28px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 24%), var(--surface);
+  background: linear-gradient(180deg, rgba(255, 248, 241, 0.16), transparent 24%), var(--surface);
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 32px;
   box-shadow: var(--shadow);
@@ -99,6 +99,7 @@ body::after {
   gap: 20px;
   padding-top: 24px;
   padding-bottom: 18px;
+  background: linear-gradient(180deg, rgba(232, 216, 198, 0.82), rgba(241, 228, 212, 0.66));
   border-bottom: 1px solid var(--line);
 }
 
@@ -328,7 +329,7 @@ body::after {
 }
 
 .hero-panel .card-label {
-  color: rgba(245, 235, 224, 0.84);
+  color: var(--coral);
 }
 
 .hero-panel::after {
@@ -405,8 +406,8 @@ body::after {
 
 .signal-card {
   padding: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(95, 125, 102, 0.08));
-  border-color: rgba(95, 125, 102, 0.18);
+  background: #ffffff;
+  border-color: var(--line);
 }
 
 .signal-card h2 {
@@ -420,7 +421,7 @@ body::after {
 
 .signal-card p {
   margin: 0;
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .section {
