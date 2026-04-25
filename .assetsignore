@@ -4,3 +4,8 @@
 .gitignore
 launch-notes.md
 rush-connect-care-cloudflare.zip
+audit-*.png
+homepage-preview.png
+logo.png
+ndis-logo.jpg
+tmp/

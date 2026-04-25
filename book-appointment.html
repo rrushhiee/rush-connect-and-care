@@ -14,69 +14,96 @@
   <meta property="og:title" content="Book an Appointment | Rush Connect &amp; Care">
   <meta property="og:description" content="Request an online mentoring appointment and choose a preferred time and payment method.">
   <meta property="og:url" content="https://rushconnectandcare.com.au/book-appointment.html">
+  <meta property="og:image" content="https://rushconnectandcare.com.au/logo-512.png">
+  <meta property="og:image:alt" content="Rush Connect &amp; Care logo">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Book an Appointment | Rush Connect &amp; Care">
+  <meta name="twitter:description" content="Request an online mentoring appointment and choose a preferred time and payment method.">
+  <meta name="twitter:image" content="https://rushconnectandcare.com.au/logo-512.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
     rel="stylesheet"
   >
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.min.css">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Rush Connect & Care",
-      "url": "https://rushconnectandcare.com.au/",
-      "logo": "https://rushconnectandcare.com.au/logo-512.png",
-      "image": "https://rushconnectandcare.com.au/logo-512.png",
-      "founder": {
-        "@type": "Person",
-        "name": "Rupert Rush"
-      },
-      "telephone": "+61 423 815 267",
-      "email": "hello@rushconnectandcare.com.au",
-      "description": "Youth mentoring, online youth mentoring, NDIS support, peer support, community access support, and practical support and mentoring in Melbourne, Victoria.",
-      "serviceType": [
-        "Youth mentoring",
-        "Online youth mentoring",
-        "NDIS support",
-        "Peer support",
-        "Community access support",
-        "Practical support and mentoring"
-      ],
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Melbourne"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Victoria"
-        },
-        {
-          "@type": "Country",
-          "name": "Australia"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Melbourne",
-        "addressRegion": "VIC",
-        "addressCountry": "AU"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "name": "Rupert Rush",
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://rushconnectandcare.com.au/#business",
+        "name": "Rush Connect & Care",
+        "url": "https://rushconnectandcare.com.au/",
+        "description": "Male youth mentoring, online youth mentoring, NDIS peer support, community access support, and practical support in Melbourne, Victoria, Australia.",
+        "image": "https://rushconnectandcare.com.au/logo-512.png",
+        "logo": "https://rushconnectandcare.com.au/logo-512.png",
         "telephone": "+61 423 815 267",
         "email": "hello@rushconnectandcare.com.au",
-        "availableLanguage": "English",
-        "areaServed": {
-          "@type": "AdministrativeArea",
-          "name": "Melbourne, Victoria, Australia"
+        "priceRange": "$",
+        "sameAs": [
+          "https://www.linkedin.com/in/rupert-rush-25aa36231/"
+        ],
+        "founder": {
+          "@id": "https://rushconnectandcare.com.au/#rupert-rush"
+        },
+        "serviceType": [
+          "Male youth mentoring",
+          "Online youth mentoring",
+          "NDIS peer support",
+          "Peer support",
+          "Community access support",
+          "Practical support and mentoring"
+        ],
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Melbourne"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Victoria"
+          },
+          {
+            "@type": "Country",
+            "name": "Australia"
+          }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Melbourne",
+          "addressRegion": "VIC",
+          "addressCountry": "AU"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "name": "Rupert Rush",
+          "telephone": "+61 423 815 267",
+          "email": "hello@rushconnectandcare.com.au",
+          "availableLanguage": [
+            "English"
+          ]
         }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rushconnectandcare.com.au/#rupert-rush",
+        "name": "Rupert Rush",
+        "url": "https://rushconnectandcare.com.au/about.html",
+        "image": "https://rushconnectandcare.com.au/logo-512.png",
+        "jobTitle": "Founder and peer support worker",
+        "worksFor": {
+          "@id": "https://rushconnectandcare.com.au/#business"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/rupert-rush-25aa36231/"
+        ],
+        "description": "Rupert Rush is the founder of Rush Connect & Care, offering lived-experience youth mentoring and one-to-one NDIS peer support."
       }
-    }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -84,9 +111,9 @@
     <header class="site-header">
       <div class="brand-lockup">
         <a href="index.html" class="logo-link" aria-label="Rush Connect &amp; Care home">
-          <img class="brand-logo" src="logo-512.png" alt="Rush Connect &amp; Care logo" width="512" height="512" decoding="async">
+          <img class="brand-logo" src="logo-320.webp" alt="Rush Connect &amp; Care logo" width="320" height="320" decoding="async" fetchpriority="high">
         </a>
-        <p class="header-note">YOUTH MENTORING + NDIS SUPPORT</p>
+        <p class="header-note">MALE YOUTH MENTORING + PEER SUPPORT</p>
       </div>
       <nav class="primary-nav" aria-label="Primary">
         <div class="nav-dropdown">
@@ -96,7 +123,19 @@
           </div>
         </div>
         <a class="nav-link" href="index.html">Mentoring</a>
-        <a class="nav-link" href="ndis-support.html">NDIS Support</a>
+        <div class="nav-dropdown">
+          <a class="nav-link nav-dropdown-trigger" href="ndis-support.html">NDIS Support</a>
+          <div class="nav-dropdown-menu" role="menu" aria-label="NDIS links">
+            <a class="nav-dropdown-item" href="resources.html">Resources</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a class="nav-link nav-dropdown-trigger" href="updates.html">Updates</a>
+          <div class="nav-dropdown-menu" role="menu" aria-label="Updates links">
+            <a class="nav-dropdown-item" href="updates.html#latest">Latest updates</a>
+            <a class="nav-dropdown-item" href="updates.html#documents">Documents and resources</a>
+          </div>
+        </div>
         <a class="nav-link" href="book-now.html">Book Now</a>
         <a class="nav-link" href="contact.html">Contact</a>
         <a class="nav-link nav-link-cta" href="enquire.html">Enquire</a>
@@ -106,13 +145,14 @@
     <main>
       <section class="section enquiry-hero">
         <div class="section-heading">
-          <p class="eyebrow">Book appointment</p>
-          <h1>Choose a time and how you would like to pay</h1>
+          <p class="eyebrow">Book an appointment</p>
+          <h1>Choose a time and payment option</h1>
         </div>
         <p class="hero-text enquiry-text">
           Use this page to request an online mentoring appointment, choose a
           preferred date, and note whether you would like a secure payment link,
-          invoice, or another payment arrangement.
+          invoice, or another payment arrangement. Only the essentials are
+          needed to request a booking.
         </p>
       </section>
 
@@ -127,23 +167,27 @@
           <article class="info-card process-card">
             <p class="step-number">2</p>
             <h3>Choose a session</h3>
-            <p>Request a 30 minute, 60 minute, or 3-session bundle depending on the support needed.</p>
+            <p>Request a 30-minute, 60-minute, or 3-session bundle, depending on the support needed.</p>
           </article>
           <article class="info-card process-card">
             <p class="step-number">3</p>
             <h3>Choose payment</h3>
-            <p>Ask for a secure payment link, invoice and bank transfer, or another agreed payment method.</p>
+            <p>Ask for a secure payment link, an invoice and bank transfer, or another agreed payment method.</p>
           </article>
         </div>
       </section>
 
       <section class="section">
         <h2 class="visually-hidden">Appointment request form</h2>
-        <form class="enquiry-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="c37e1152-91cb-4e6c-8452-8eebfaa3fdb8">
-          <input type="hidden" name="subject" value="New Rush Connect &amp; Care booking request">
-          <input type="hidden" name="from_name" value="Rush Connect &amp; Care Website">
-          <input type="hidden" name="redirect" value="https://rushconnectandcare.com.au/thank-you.html">
+        <form
+          class="enquiry-form"
+          action="https://formspree.io/f/YOUR_BOOKING_FORM_ID"
+          method="POST"
+          data-rcc-form
+          data-form-endpoint="bookingEndpoint"
+          data-success-url="thank-you.html"
+        >
+          <input type="hidden" name="_subject" value="New Rush Connect &amp; Care booking request">
           <input type="checkbox" name="botcheck" class="honeypot">
 
           <label class="form-field">
@@ -152,52 +196,35 @@
           </label>
 
           <label class="form-field">
-            <span>Email</span>
-            <input type="email" name="email" autocomplete="email" required>
-          </label>
-
-          <label class="form-field">
-            <span>Phone number</span>
-            <input type="tel" name="phone" autocomplete="tel" required>
-          </label>
-
-          <label class="form-field">
-            <span>Who is the appointment for?</span>
-            <select name="support_for" required>
-              <option value="">Select an option</option>
-              <option value="My child or young person">My child or young person</option>
-              <option value="Myself">Myself</option>
-              <option value="A family member">A family member</option>
-            </select>
+            <span>Best contact detail</span>
+            <input
+              type="text"
+              name="contact_details"
+              autocomplete="email"
+              placeholder="Phone number or email"
+              required
+            >
           </label>
 
           <label class="form-field">
             <span>Session option</span>
             <select name="session_option" required>
               <option value="">Select a session</option>
-              <option value="30 minute session">30 minute session</option>
-              <option value="60 minute session">60 minute session</option>
-              <option value="3 x 60 minute bundle">3 x 60 minute bundle</option>
+              <option value="30-minute session">30-minute session</option>
+              <option value="60-minute session">60-minute session</option>
+              <option value="3 x 60-minute bundle">3 x 60-minute bundle</option>
               <option value="Not sure yet">Not sure yet</option>
             </select>
           </label>
 
           <label class="form-field">
-            <span>Preferred date</span>
-            <input type="date" name="preferred_date" required>
-          </label>
-
-          <label class="form-field">
-            <span>Preferred time</span>
-            <select name="preferred_time" required>
-              <option value="">Select a time window</option>
-              <option value="9:00am - 11:00am">9:00am - 11:00am</option>
-              <option value="11:00am - 1:00pm">11:00am - 1:00pm</option>
-              <option value="1:00pm - 3:00pm">1:00pm - 3:00pm</option>
-              <option value="3:00pm - 5:00pm">3:00pm - 5:00pm</option>
-              <option value="After school / evening">After school / evening</option>
-              <option value="Flexible">Flexible</option>
-            </select>
+            <span>Preferred day or time</span>
+            <input
+              type="text"
+              name="preferred_schedule"
+              placeholder="Tuesday after school, Friday morning, or flexible"
+              required
+            >
           </label>
 
           <label class="form-field">
@@ -211,19 +238,9 @@
             </select>
           </label>
 
-          <label class="form-field">
-            <span>Preferred contact</span>
-            <select name="preferred_contact" required>
-              <option value="">Select an option</option>
-              <option value="Phone call">Phone call</option>
-              <option value="Text message">Text message</option>
-              <option value="Email">Email</option>
-            </select>
-          </label>
-
           <label class="form-field form-field-full">
             <span>Anything important to know?</span>
-            <textarea name="message" rows="6" placeholder="Tell me a little about what support is needed, any flexibility around the date, and anything that would help with booking." required></textarea>
+            <textarea name="message" rows="5" placeholder="Optional: anything that would help with booking."></textarea>
           </label>
 
           <div class="form-actions">
@@ -260,15 +277,15 @@
         <div class="footer-block">
           <p class="footer-title">Rush Connect &amp; Care</p>
           <p class="footer-copy">
-            Online youth mentoring is the main service, with NDIS support for men
-            available as a smaller part of the work.
+            Specialist male youth mentoring is the main service, with one-to-one
+            NDIS peer support for men available where it is the right fit.
           </p>
         </div>
         <div class="footer-block">
           <p class="footer-title">Contact</p>
           <div class="footer-links">
             <a href="tel:0423815267">0423 815 267</a>
-            <a href="mailto:rupert.rush@me.com">rupert.rush@me.com</a>
+            <a href="mailto:hello@rushconnectandcare.com.au">hello@rushconnectandcare.com.au</a>
             <span class="footer-mini-title">Service area</span>
             <span>Online youth mentoring</span>
             <span>NDIS support in Melbourne VIC and the northern suburbs</span>
@@ -282,6 +299,8 @@
             <a href="book-now.html">Book Now</a>
             <a href="ndis-support.html">NDIS Support</a>
             <a href="ndis-funding.html">Using NDIS Funding</a>
+            <a href="resources.html">Resources</a>
+            <a href="updates.html">Updates</a>
             <a href="contact.html">Contact</a>
             <a href="enquire.html">Enquire Now</a>
             <a href="policies.html">Policies</a>
@@ -290,5 +309,7 @@
       </div>
     </footer>
   </div>
+  <script src="site-config.min.js"></script>
+  <script src="forms.min.js"></script>
 </body>
 </html>

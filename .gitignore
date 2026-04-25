@@ -6,6 +6,11 @@ app-summary.pdf
 app-summary.txt
 launch-notes.md
 rush-connect-care-cloudflare.zip
+dist/
+node_modules/
+audit-*.png
+homepage-preview.png
+tmp/
 
 cloudflare-publish 2/
 flyer_extract/

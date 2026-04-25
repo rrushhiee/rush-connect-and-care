@@ -1,0 +1,26 @@
+{
+  "name": "rush-connect-and-care-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/minify-assets.mjs && node scripts/build.mjs",
+    "lint:html": "htmlhint \"*.html\"",
+    "lint:css": "stylelint \"styles.css\"",
+    "lint": "npm run lint:html && npm run lint:css",
+    "serve:dist": "node scripts/server.mjs",
+    "test:links": "node scripts/check-links.mjs",
+    "test:forms": "playwright test",
+    "test:a11y": "pa11y-ci --config pa11yci.json",
+    "test": "npm run test:links && npm run test:forms",
+    "ci": "npm run build && npm run lint && start-server-and-test serve:dist http://127.0.0.1:4173 \"npm run test && npm run test:a11y\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "htmlhint": "^1.7.1",
+    "pa11y-ci": "^4.0.1",
+    "start-server-and-test": "^2.0.10",
+    "stylelint": "^16.18.0",
+    "stylelint-config-standard": "^38.0.0"
+  }
+}
