@@ -498,7 +498,12 @@ body::after {
   border-color: rgba(200, 216, 199, 0.24);
 }
 
-.home-page .hero-panel {
+.home-page .hero-panel,
+.home-page .signal-card,
+.home-page .info-card,
+.home-page .contact-card,
+.home-page .notice,
+.home-page .cta-panel {
   background: #cfe0d1;
   border-color: rgba(79, 128, 100, 0.28);
   color: var(--ink);
@@ -510,12 +515,34 @@ body::after {
   color: var(--ink);
 }
 
-.home-page .hero-panel .card-label {
+.home-page .hero-panel .hero-list li::marker {
   color: var(--teal-deep);
 }
 
-.home-page .hero-panel .hero-list li::marker {
-  color: var(--teal-deep);
+.home-page .hero-panel .card-label,
+.home-page .signal-card-title,
+.home-page .info-card h3,
+.home-page .contact-card h3,
+.home-page .contact-card .eyebrow,
+.home-page .cta-panel .eyebrow,
+.home-page .cta-panel .section-heading h2,
+.home-page .notice strong {
+  color: #000;
+}
+
+.home-page .cta-panel p {
+  color: var(--ink);
+}
+
+.home-page .cta-panel .button-primary {
+  background: var(--teal-deep);
+  color: #fff;
+}
+
+.home-page .cta-panel .button-secondary {
+  background: rgba(255, 255, 255, 0.58);
+  border-color: rgba(79, 128, 100, 0.28);
+  color: var(--navy);
 }
 
 .hero-list {
