@@ -1,4 +1,5 @@
 const LOCAL_TEST_HOSTS = new Set(["127.0.0.1", "localhost"]);
+const CONTACT_EMAIL = "hello@rushconnectandcare.com.au";
 
 function showFormStatus(form, message, type = "info") {
   let status = form.querySelector("[data-form-status]");
@@ -26,6 +27,54 @@ function getEndpoint(form) {
   return configured || form.getAttribute("action") || "";
 }
 
+function buildMailtoBody(form) {
+  const entries = [];
+  const fields = Array.from(form.elements).filter((field) => {
+    if (!field.name || field.disabled) {
+      return false;
+    }
+
+    if (field.type === "hidden" || field.type === "submit" || field.name === "botcheck") {
+      return false;
+    }
+
+    if ((field.type === "checkbox" || field.type === "radio") && !field.checked) {
+      return false;
+    }
+
+    return true;
+  });
+
+  for (const field of fields) {
+    const label = field
+      .closest("label")
+      ?.querySelector("span")
+      ?.textContent?.trim() || field.name;
+    const value = field.value?.trim();
+
+    if (!value) {
+      continue;
+    }
+
+    entries.push(`${label}: ${value}`);
+  }
+
+  entries.push("");
+  entries.push(`Page: ${window.location.href}`);
+  return entries.join("\n");
+}
+
+function openMailFallback(form) {
+  const subject =
+    form.querySelector('input[name="_subject"]')?.value?.trim() ||
+    form.querySelector('input[name="form_type"]')?.value?.trim() ||
+    "Rush Connect & Care enquiry";
+  const body = buildMailtoBody(form);
+  const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  window.location.assign(mailtoUrl);
+}
+
 async function handleFormSubmit(event) {
   event.preventDefault();
 
@@ -37,9 +86,10 @@ async function handleFormSubmit(event) {
   if (!endpoint || endpoint.includes("YOUR_")) {
     showFormStatus(
       form,
-      "This form is not available right now. Please call or email directly instead.",
+      "This form is not available right now. We are opening an email draft so you can still send your enquiry.",
       "error"
     );
+    openMailFallback(form);
     return;
   }
 
@@ -72,9 +122,10 @@ async function handleFormSubmit(event) {
   } catch {
     showFormStatus(
       form,
-      "There was a problem sending the form. Please try again, call, or email directly.",
+      "We could not send the form directly. We are opening an email draft so your enquiry can still be sent to hello@rushconnectandcare.com.au.",
       "error"
     );
+    openMailFallback(form);
   } finally {
     submitButton?.removeAttribute("disabled");
   }
@@ -85,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (new URLSearchParams(window.location.search).get("form-error") === "1") {
       showFormStatus(
         form,
-        "There was a problem sending the form. Please try again, call, or email directly.",
+        "We could not send the form directly. Please use the phone or email options below if needed.",
         "error"
       );
     }
