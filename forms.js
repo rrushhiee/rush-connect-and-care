@@ -27,6 +27,10 @@ function getEndpoint(form) {
 }
 
 async function handleFormSubmit(event) {
+  if (!LOCAL_TEST_HOSTS.has(window.location.hostname)) {
+    return;
+  }
+
   event.preventDefault();
 
   const form = event.currentTarget;
@@ -36,7 +40,7 @@ async function handleFormSubmit(event) {
   if (!endpoint || endpoint.includes("YOUR_")) {
     showFormStatus(
       form,
-      "The form service still needs to be connected. Please add the live endpoint in site-config.js.",
+      "This form is not available right now. Please call or email directly instead.",
       "error"
     );
     return;

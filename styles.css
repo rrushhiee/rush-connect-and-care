@@ -911,7 +911,8 @@ body::after {
 }
 
 .form-field-full,
-.form-actions {
+.form-actions,
+.form-note-full {
   grid-column: 1 / -1;
 }
 
@@ -942,6 +943,11 @@ body::after {
   color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.5;
+}
+
+.form-note a {
+  color: var(--navy);
+  font-weight: 700;
 }
 
 .form-status {

@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Book an Appointment | Rush Connect &amp; Care</title>
+  <title>Request a Consult or Session | Rush Connect &amp; Care</title>
   <meta
     name="description"
-    content="Book an online youth mentoring appointment with Rush Connect &amp; Care by choosing a preferred date, time, and payment method."
+    content="Request a free 15-minute consult or an online youth mentoring session with Rush Connect &amp; Care by choosing a preferred time and payment option."
   >
   <link rel="canonical" href="https://rushconnectandcare.com.au/book-appointment.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rush Connect &amp; Care">
-  <meta property="og:title" content="Book an Appointment | Rush Connect &amp; Care">
-  <meta property="og:description" content="Request an online mentoring appointment and choose a preferred time and payment method.">
+  <meta property="og:title" content="Request a Consult or Session | Rush Connect &amp; Care">
+  <meta property="og:description" content="Request a free 15-minute consult or an online youth mentoring session and choose a preferred time and payment method.">
   <meta property="og:url" content="https://rushconnectandcare.com.au/book-appointment.html">
   <meta property="og:image" content="https://rushconnectandcare.com.au/logo-512.png">
   <meta property="og:image:alt" content="Rush Connect &amp; Care logo">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Book an Appointment | Rush Connect &amp; Care">
-  <meta name="twitter:description" content="Request an online mentoring appointment and choose a preferred time and payment method.">
+  <meta name="twitter:title" content="Request a Consult or Session | Rush Connect &amp; Care">
+  <meta name="twitter:description" content="Request a free 15-minute consult or an online youth mentoring session and choose a preferred time and payment method.">
   <meta name="twitter:image" content="https://rushconnectandcare.com.au/logo-512.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,14 +151,14 @@
     <main>
       <section class="section enquiry-hero">
         <div class="section-heading">
-          <p class="eyebrow">Book an appointment</p>
-          <h1>Choose a time and payment option</h1>
+          <p class="eyebrow">Request a consult or session</p>
+          <h1>Choose a free consult or a mentoring session</h1>
         </div>
         <p class="hero-text enquiry-text">
-          Use this page to request an online mentoring appointment, choose a
-          preferred date, and note whether you would like a secure payment link,
-          invoice, or another payment arrangement. Only the essentials are
-          needed to request a booking.
+          Use this page to request a free 15-minute first consult or an online
+          mentoring appointment, choose a preferred date, and note whether you
+          would like a secure payment link, invoice, or another payment
+          arrangement. Only the essentials are needed to request a booking.
         </p>
       </section>
 
@@ -173,7 +173,7 @@
           <article class="info-card process-card">
             <p class="step-number">2</p>
             <h3>Choose a session</h3>
-            <p>Request a 30-minute, 60-minute, or 3-session bundle, depending on the support needed.</p>
+            <p>Start with a free 15-minute consult or request a 30-minute, 60-minute, or 3-session bundle.</p>
           </article>
           <article class="info-card process-card">
             <p class="step-number">3</p>
@@ -187,7 +187,7 @@
         <h2 class="visually-hidden">Appointment request form</h2>
         <form
           class="enquiry-form"
-          action="https://formsubmit.co/ajax/hello@rushconnectandcare.com.au"
+          action="https://formsubmit.co/hello@rushconnectandcare.com.au"
           method="POST"
           data-rcc-form
           data-form-endpoint="bookingEndpoint"
@@ -195,7 +195,12 @@
         >
           <input type="hidden" name="_subject" value="New Rush Connect &amp; Care booking request">
           <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://rushconnectandcare.com.au/thank-you.html">
           <input type="checkbox" name="botcheck" class="honeypot">
+
+          <p class="form-note form-note-full">
+            All fields are required except the last message box. Your details are only used to arrange the appointment. If you would rather speak first, call <a href="tel:0423815267">0423 815 267</a> or email <a href="mailto:hello@rushconnectandcare.com.au">hello@rushconnectandcare.com.au</a>.
+          </p>
 
           <label class="form-field">
             <span>Name</span>
@@ -217,6 +222,7 @@
             <span>Session option</span>
             <select name="session_option" required>
               <option value="">Select a session</option>
+              <option value="Free 15-minute first consult">Free 15-minute first consult</option>
               <option value="30-minute session">30-minute session</option>
               <option value="60-minute session">60-minute session</option>
               <option value="3 x 60-minute bundle">3 x 60-minute bundle</option>
@@ -246,12 +252,12 @@
           </label>
 
           <label class="form-field form-field-full">
-            <span>Anything important to know?</span>
+            <span>Anything important to know? (optional)</span>
             <textarea name="message" rows="5" placeholder="Optional: anything that would help with booking."></textarea>
           </label>
 
           <div class="form-actions">
-            <button class="button button-primary" type="submit">Request appointment</button>
+            <button class="button button-primary" type="submit">Request consult or session</button>
             <a class="button button-secondary" href="book-now.html">Back to session options</a>
           </div>
         </form>
