@@ -505,8 +505,8 @@ body::after {
 }
 
 .home-page .hero-panel-secondary {
-  background: #a9c5b0;
-  border-color: rgba(79, 128, 100, 0.34);
+  background: #cfe0d1;
+  border-color: rgba(79, 128, 100, 0.28);
   color: var(--ink);
 }
 
