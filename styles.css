@@ -498,6 +498,26 @@ body::after {
   border-color: rgba(200, 216, 199, 0.24);
 }
 
+.home-page .hero-panel {
+  background: #cfe0d1;
+  border-color: rgba(79, 128, 100, 0.28);
+  color: var(--ink);
+}
+
+.home-page .hero-panel-secondary {
+  background: #a9c5b0;
+  border-color: rgba(79, 128, 100, 0.34);
+  color: var(--ink);
+}
+
+.home-page .hero-panel .card-label {
+  color: var(--teal-deep);
+}
+
+.home-page .hero-panel .hero-list li::marker {
+  color: var(--teal-deep);
+}
+
 .hero-list {
   position: relative;
   z-index: 1;
