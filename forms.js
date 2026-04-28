@@ -1,5 +1,6 @@
 const LOCAL_TEST_HOSTS = new Set(["127.0.0.1", "localhost"]);
 const CONTACT_EMAIL = "hello@rushconnectandcare.com.au";
+const JSON_ENDPOINT_MATCHERS = ["formsubmit.co/ajax/"];
 
 function showFormStatus(form, message, type = "info") {
   let status = form.querySelector("[data-form-status]");
@@ -34,7 +35,7 @@ function buildMailtoBody(form) {
       return false;
     }
 
-    if (field.type === "hidden" || field.type === "submit" || field.name === "botcheck") {
+    if (field.type === "hidden" || field.type === "submit" || field.name === "_honey") {
       return false;
     }
 
@@ -64,6 +65,30 @@ function buildMailtoBody(form) {
   return entries.join("\n");
 }
 
+function shouldSubmitAsJson(endpoint) {
+  return JSON_ENDPOINT_MATCHERS.some((matcher) => endpoint.includes(matcher));
+}
+
+function canEnhanceForms() {
+  return (
+    typeof window.fetch === "function" &&
+    typeof window.FormData === "function" &&
+    typeof window.URLSearchParams === "function"
+  );
+}
+
+function buildJsonPayload(form) {
+  const payload = {};
+  const formData = new FormData(form);
+  formData.delete("_honey");
+
+  for (const [key, value] of formData.entries()) {
+    payload[key] = typeof value === "string" ? value.trim() : value;
+  }
+
+  return JSON.stringify(payload);
+}
+
 function openMailFallback(form) {
   const subject =
     form.querySelector('input[name="_subject"]')?.value?.trim() ||
@@ -76,12 +101,17 @@ function openMailFallback(form) {
 }
 
 async function handleFormSubmit(event) {
+  if (!canEnhanceForms()) {
+    return;
+  }
+
   event.preventDefault();
 
   const form = event.currentTarget;
   const submitButton = form.querySelector('button[type="submit"]');
   const isLocalTest = LOCAL_TEST_HOSTS.has(window.location.hostname);
   const endpoint = getEndpoint(form);
+  const submitAsJson = shouldSubmitAsJson(endpoint);
 
   if (!endpoint || endpoint.includes("YOUR_")) {
     showFormStatus(
@@ -97,13 +127,19 @@ async function handleFormSubmit(event) {
   showFormStatus(form, "Sending your message...", "info");
 
   try {
-    if (isLocalTest) {
+    if (isLocalTest || submitAsJson) {
+      const headers = {
+        Accept: "application/json"
+      };
+
+      if (submitAsJson) {
+        headers["Content-Type"] = "application/json";
+      }
+
       const response = await fetch(endpoint, {
         method: "POST",
-        headers: {
-          Accept: "application/json"
-        },
-        body: new FormData(form)
+        headers,
+        body: submitAsJson ? buildJsonPayload(form) : new FormData(form)
       });
 
       if (!response.ok) {

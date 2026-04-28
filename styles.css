@@ -878,6 +878,13 @@ body::after {
   font-size: 0.96rem;
 }
 
+.form-field em {
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
 .form-field input,
 .form-field select,
 .form-field textarea {
@@ -948,6 +955,29 @@ body::after {
 .form-note a {
   color: var(--navy);
   font-weight: 700;
+}
+
+.form-checklist {
+  display: grid;
+  gap: 8px;
+  padding-top: 4px;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.form-checklist p,
+.form-checklist ul {
+  margin: 0;
+}
+
+.form-checklist strong {
+  color: var(--navy);
+}
+
+.form-checklist ul {
+  display: grid;
+  gap: 6px;
+  padding-left: 20px;
 }
 
 .form-status {

@@ -172,15 +172,17 @@
           data-rcc-form
           data-form-endpoint="enquiryEndpoint"
           data-success-url="/thank-you.html"
+          aria-describedby="enquiry-form-note"
         >
           <input type="hidden" name="_subject" value="New Rush Connect &amp; Care enquiry">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="https://rushconnectandcare.com.au/thank-you.html">
+          <input type="hidden" name="_template" value="table">
           <input type="hidden" name="form_type" value="Enquiry">
-          <input type="checkbox" name="botcheck" class="honeypot">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none;">
 
-          <p class="form-note form-note-full">
-            All fields are required. Your details are only used to reply to your enquiry. If you would rather speak first, call <a href="tel:0423815267">0423 815 267</a> or email <a href="mailto:hello@rushconnectandcare.com.au">hello@rushconnectandcare.com.au</a>.
+          <p class="form-note form-note-full" id="enquiry-form-note">
+            Your enquiry is sent to <a href="mailto:hello@rushconnectandcare.com.au">hello@rushconnectandcare.com.au</a>. Required fields are marked by the form. If you would rather speak first, call <a href="tel:0423815267">0423 815 267</a>.
           </p>
 
           <label class="form-field">
@@ -189,13 +191,23 @@
           </label>
 
           <label class="form-field">
-            <span>Best contact detail</span>
+            <span>Email address</span>
             <input
-              type="text"
-              name="contact_details"
+              type="email"
+              name="email"
               autocomplete="email"
-              placeholder="Phone number or email"
+              placeholder="you@example.com"
               required
+            >
+          </label>
+
+          <label class="form-field">
+            <span>Phone number <em>optional</em></span>
+            <input
+              type="tel"
+              name="phone"
+              autocomplete="tel"
+              placeholder="0423 815 267"
             >
           </label>
 
@@ -220,8 +232,17 @@
             ></textarea>
           </label>
 
+          <div class="form-checklist form-note-full" aria-label="What happens after you enquire">
+            <p><strong>What happens next</strong></p>
+            <ul>
+              <li>Your message is sent directly to Rupert at Rush Connect &amp; Care.</li>
+              <li>You will receive a reply using the email address you provide.</li>
+              <li>If it sounds like the right fit, the next step is a simple first conversation.</li>
+            </ul>
+          </div>
+
           <div class="form-actions">
-            <button class="button button-primary" type="submit">Start an enquiry</button>
+            <button class="button button-primary" type="submit">Send enquiry</button>
             <a class="button button-secondary" href="index.html">Back to home</a>
           </div>
         </form>
