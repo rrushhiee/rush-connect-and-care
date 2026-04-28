@@ -77,6 +77,14 @@ async function handleFormSubmit(event) {
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-rcc-form]").forEach((form) => {
+    if (new URLSearchParams(window.location.search).get("form-error") === "1") {
+      showFormStatus(
+        form,
+        "There was a problem sending the form. Please try again, call, or email directly.",
+        "error"
+      );
+    }
+
     form.addEventListener("submit", handleFormSubmit);
   });
 });
