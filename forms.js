@@ -31,6 +31,11 @@ function shouldSubmitAsJson(endpoint) {
   return JSON_ENDPOINT_MATCHERS.some((matcher) => endpoint.includes(matcher));
 }
 
+function shouldUseNativeSubmit(endpoint) {
+  const endpointUrl = new URL(endpoint, window.location.href);
+  return endpointUrl.origin === window.location.origin && endpointUrl.pathname.startsWith("/forms/");
+}
+
 function canEnhanceForms() {
   return (
     typeof window.fetch === "function" &&
@@ -56,12 +61,17 @@ async function handleFormSubmit(event) {
     return;
   }
 
+  const form = event.currentTarget;
+  const endpoint = getEndpoint(form);
+
+  if (shouldUseNativeSubmit(endpoint)) {
+    return;
+  }
+
   event.preventDefault();
 
-  const form = event.currentTarget;
   const submitButton = form.querySelector('button[type="submit"]');
   const isLocalTest = LOCAL_TEST_HOSTS.has(window.location.hostname);
-  const endpoint = getEndpoint(form);
   const submitAsJson = shouldSubmitAsJson(endpoint);
 
   if (!endpoint || endpoint.includes("YOUR_")) {
