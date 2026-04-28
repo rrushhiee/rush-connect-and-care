@@ -545,6 +545,15 @@ body::after {
   border-color: var(--line);
 }
 
+.signal-card-mission {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(142, 208, 216, 0.16), rgba(239, 191, 108, 0.16));
+}
+
+.signal-card-mission p {
+  max-width: 74ch;
+}
+
 .signal-card-title {
   margin: 0 0 8px;
   color: var(--teal-deep);
