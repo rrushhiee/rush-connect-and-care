@@ -1,6 +1,6 @@
 window.RCC_CONFIG = Object.freeze({
-  enquiryEndpoint: "/forms/enquiry",
-  bookingEndpoint: "/forms/booking",
-  newsletterEndpoint: "/forms/newsletter",
+  enquiryEndpoint: "https://formsubmit.co/hello@rushconnectandcare.com.au",
+  bookingEndpoint: "https://formsubmit.co/hello@rushconnectandcare.com.au",
+  newsletterEndpoint: "https://formsubmit.co/hello@rushconnectandcare.com.au",
   formSuccessUrl: "thank-you.html"
 });

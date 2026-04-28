@@ -27,14 +27,11 @@ function getEndpoint(form) {
 }
 
 async function handleFormSubmit(event) {
-  if (!LOCAL_TEST_HOSTS.has(window.location.hostname)) {
-    return;
-  }
-
   event.preventDefault();
 
   const form = event.currentTarget;
   const submitButton = form.querySelector('button[type="submit"]');
+  const isLocalTest = LOCAL_TEST_HOSTS.has(window.location.hostname);
   const endpoint = getEndpoint(form);
 
   if (!endpoint || endpoint.includes("YOUR_")) {
@@ -50,16 +47,24 @@ async function handleFormSubmit(event) {
   showFormStatus(form, "Sending your message...", "info");
 
   try {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        Accept: "application/json"
-      },
-      body: new FormData(form)
-    });
+    if (isLocalTest) {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json"
+        },
+        body: new FormData(form)
+      });
 
-    if (!response.ok) {
-      throw new Error(`Form request failed with status ${response.status}`);
+      if (!response.ok) {
+        throw new Error(`Form request failed with status ${response.status}`);
+      }
+    } else {
+      await fetch(endpoint, {
+        method: "POST",
+        mode: "no-cors",
+        body: new FormData(form)
+      });
     }
 
     const successUrl = form.dataset.successUrl || window.RCC_CONFIG?.formSuccessUrl || "thank-you.html";
