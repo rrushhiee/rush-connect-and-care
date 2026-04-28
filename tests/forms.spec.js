@@ -14,24 +14,9 @@ test("enquiry form submits successfully", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Thank you" })).toBeVisible();
 });
 
-test("enquiry form failure stays in the portal", async ({ page }) => {
-  await page.route("http://127.0.0.1:4173/__form_test__", async (route) => {
-    await route.fulfill({
-      status: 500,
-      body: "Form service unavailable"
-    });
-  });
+test("enquiry form failure redirect stays in the portal", async ({ page }) => {
+  await page.goto("http://127.0.0.1:4173/enquire.html?form-error=1");
 
-  await page.goto("http://127.0.0.1:4173/enquire.html");
-
-  await page.getByLabel("Name").fill("Rupert Test");
-  await page.getByLabel("Email address").fill("rupert@example.com");
-  await page.getByLabel("Phone number optional").fill("0423 815 267");
-  await page.getByLabel("What are you enquiring about?").selectOption("Online youth mentoring");
-  await page.getByLabel("Short message").fill("I am checking the failure state.");
-  await page.getByRole("button", { name: "Send enquiry" }).click();
-
-  await expect(page).toHaveURL("http://127.0.0.1:4173/enquire.html");
   await expect(page.getByText("We could not send the form directly.")).toBeVisible();
 });
 

@@ -18,13 +18,19 @@ function showFormStatus(form, message, type = "info") {
 }
 
 function getEndpoint(form) {
+  const action = form.getAttribute("action") || "";
+
+  if (action.startsWith("/forms/")) {
+    return action;
+  }
+
   if (LOCAL_TEST_HOSTS.has(window.location.hostname)) {
     return "/__form_test__";
   }
 
   const configuredKey = form.dataset.formEndpoint;
   const configured = configuredKey ? window.RCC_CONFIG?.[configuredKey] : window.RCC_CONFIG?.formEndpoint;
-  return configured || form.getAttribute("action") || "";
+  return configured || action;
 }
 
 function shouldSubmitAsJson(endpoint) {
@@ -127,7 +133,7 @@ async function handleFormSubmit(event) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("[data-rcc-form]").forEach((form) => {
+  document.querySelectorAll("[data-rcc-form], form[action^='/forms/']").forEach((form) => {
     if (new URLSearchParams(window.location.search).get("form-error") === "1") {
       showFormStatus(
         form,

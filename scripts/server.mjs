@@ -28,13 +28,19 @@ const server = http.createServer(async (request, response) => {
   const url = new URL(request.url || "/", `http://${request.headers.host}`);
   let pathname = decodeURIComponent(url.pathname);
 
-  if (pathname === "/__form_test__" && request.method === "POST") {
+  if ((pathname === "/__form_test__" || pathname === "/forms/enquiry") && request.method === "POST") {
     let body = "";
     request.setEncoding("utf8");
     request.on("data", (chunk) => {
       body += chunk;
     });
     request.on("end", () => {
+      if (pathname === "/forms/enquiry") {
+        response.writeHead(303, { Location: "/thank-you.html" });
+        response.end();
+        return;
+      }
+
       sendJson(response, 200, { ok: true, received: body.length > 0 });
     });
     return;
