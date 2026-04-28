@@ -23,12 +23,12 @@ At your registrar:
 
 ## Form setup
 
-This site is wired for Formspree.
+This site is wired for FormSubmit.
 
-1. Create a free Formspree form
-2. Copy the form endpoint
-3. Replace `https://formspree.io/f/YOUR_FORM_ID` in [site-config.js](./site-config.js)
-4. Commit and deploy
+1. Keep `hello@rushconnectandcare.com.au` active as the destination inbox
+2. Confirm the first FormSubmit activation email for each form flow if prompted
+3. Review spam filtering and autoresponder settings in FormSubmit if needed
+4. Commit and deploy after any endpoint or success-page changes
 
 ## CI checks
 

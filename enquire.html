@@ -122,10 +122,16 @@
             <a class="nav-dropdown-item" href="about.html#about">Get to know me</a>
           </div>
         </div>
-        <a class="nav-link" href="index.html">Mentoring</a>
         <div class="nav-dropdown">
+          <a class="nav-link nav-dropdown-trigger" href="index.html">Mentoring</a>
+          <div class="nav-dropdown-menu" role="menu" aria-label="Mentoring links">
+            <a class="nav-dropdown-item" href="mentoring-approach.html">Mentoring Approach</a>
+          </div>
+        </div>
+        <div class="nav-dropdown nav-dropdown-center">
           <a class="nav-link nav-dropdown-trigger" href="ndis-support.html">NDIS Support</a>
           <div class="nav-dropdown-menu" role="menu" aria-label="NDIS links">
+            <a class="nav-dropdown-item" href="ndis-referrals.html">For referrers</a>
             <a class="nav-dropdown-item" href="resources.html">Resources</a>
           </div>
         </div>
@@ -161,13 +167,14 @@
         <h2 class="visually-hidden">Enquiry form</h2>
         <form
           class="enquiry-form"
-          action="https://formspree.io/f/YOUR_ENQUIRY_FORM_ID"
+          action="https://formsubmit.co/ajax/hello@rushconnectandcare.com.au"
           method="POST"
           data-rcc-form
           data-form-endpoint="enquiryEndpoint"
           data-success-url="thank-you.html"
         >
           <input type="hidden" name="_subject" value="New Rush Connect &amp; Care enquiry">
+          <input type="hidden" name="_captcha" value="false">
           <input type="checkbox" name="botcheck" class="honeypot">
 
           <label class="form-field">
@@ -258,8 +265,10 @@
           <div class="footer-links">
             <a href="about.html">About</a>
             <a href="index.html">Mentoring</a>
+            <a href="mentoring-approach.html">Mentoring Approach</a>
             <a href="book-now.html">Book Now</a>
             <a href="ndis-support.html">NDIS Support</a>
+            <a href="ndis-referrals.html">NDIS Referrals</a>
             <a href="ndis-funding.html">Using NDIS Funding</a>
             <a href="resources.html">Resources</a>
             <a href="updates.html">Updates</a>
