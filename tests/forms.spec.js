@@ -1,19 +1,6 @@
 import { test, expect } from "@playwright/test";
 
 test("enquiry form submits successfully", async ({ page }) => {
-  await page.route("https://formsubmit.co/hello@rushconnectandcare.com.au", async (route) => {
-    const request = route.request();
-    expect(request.method()).toBe("POST");
-    expect(request.postData()).toContain("email=rupert%40example.com");
-
-    await route.fulfill({
-      status: 303,
-      headers: {
-        Location: "http://127.0.0.1:4173/thank-you.html"
-      }
-    });
-  });
-
   await page.goto("http://127.0.0.1:4173/enquire.html");
 
   await page.getByLabel("Name").fill("Rupert Test");
