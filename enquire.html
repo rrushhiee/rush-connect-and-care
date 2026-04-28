@@ -176,11 +176,15 @@
         <h2 class="visually-hidden">Enquiry form</h2>
         <form
           class="enquiry-form"
-          action="/forms/enquiry"
+          action="https://api.web3forms.com/submit"
           method="POST"
           aria-describedby="enquiry-form-note"
         >
-          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none;">
+          <input type="hidden" name="access_key" value="c37e1152-91cb-4e6c-8452-8eebfaa3fdb8">
+          <input type="hidden" name="subject" value="New Rush Connect &amp; Care enquiry">
+          <input type="hidden" name="from_name" value="Rush Connect &amp; Care website">
+          <input type="hidden" name="redirect" value="https://rushconnectandcare.com.au/thank-you.html">
+          <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none;">
 
           <p class="form-note form-note-full" id="enquiry-form-note">
             Your enquiry is sent to <a href="mailto:hello@rushconnectandcare.com.au">hello@rushconnectandcare.com.au</a>. Required fields are marked by the form. If you would rather speak first, call <a href="tel:0423815267">0423 815 267</a>.

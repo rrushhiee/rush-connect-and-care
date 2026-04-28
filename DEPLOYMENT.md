@@ -23,11 +23,11 @@ At your registrar:
 
 ## Form setup
 
-The enquiry form posts to the Cloudflare Worker route at `/forms/enquiry`.
+The enquiry form posts to Web3Forms at `https://api.web3forms.com/submit`.
 
 1. Keep `hello@rushconnectandcare.com.au` active as the destination inbox
-2. Deploy the Worker in `src/index.js` with `wrangler deploy`
-3. Confirm the `rushconnectandcare.com.au/forms/*` route is active in Cloudflare
+2. Keep the Web3Forms access key active for the destination inbox
+3. Keep the hidden `redirect` field pointed at `https://rushconnectandcare.com.au/thank-you.html`
 4. Test the live enquiry form and confirm it reaches `thank-you.html`
 5. Commit and deploy after any endpoint or success-page changes
 
