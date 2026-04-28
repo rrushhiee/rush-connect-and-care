@@ -23,12 +23,13 @@ At your registrar:
 
 ## Form setup
 
-This site is wired for FormSubmit.
+The enquiry form posts to the Cloudflare Worker route at `/forms/enquiry`.
 
 1. Keep `hello@rushconnectandcare.com.au` active as the destination inbox
-2. Confirm the first FormSubmit activation email for each form flow if prompted
-3. Review spam filtering and autoresponder settings in FormSubmit if needed
-4. Commit and deploy after any endpoint or success-page changes
+2. Deploy the Worker in `src/index.js` with `wrangler deploy`
+3. Confirm the `rushconnectandcare.com.au/forms/*` route is active in Cloudflare
+4. Test the live enquiry form and confirm it reaches `thank-you.html`
+5. Commit and deploy after any endpoint or success-page changes
 
 ## CI checks
 

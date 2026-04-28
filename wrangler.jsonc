@@ -3,6 +3,12 @@
   "name": "rush-connect-and-care",
   "compatibility_date": "2026-04-28",
   "main": "src/index.js",
+  "routes": [
+    {
+      "pattern": "rushconnectandcare.com.au/forms/*",
+      "zone_name": "rushconnectandcare.com.au"
+    }
+  ],
   "assets": {
     "directory": ".",
     "binding": "ASSETS"
