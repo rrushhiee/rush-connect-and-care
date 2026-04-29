@@ -9,6 +9,7 @@
   --teal: #4f8064;
   --teal-muted: #8da18b;
   --teal-deep: #2f5b45;
+  --london-green: #294f3c;
   --teal-wash: rgba(79, 128, 100, 0.14);
   --sky: #c7d1c4;
   --coral: #a96f3a;
@@ -499,19 +500,27 @@ body::after {
 }
 
 .home-page .hero-panel {
-  background: #cfe0d1;
-  border-color: rgba(79, 128, 100, 0.28);
-  color: var(--ink);
+  background: var(--london-green);
+  border-color: rgba(255, 249, 239, 0.26);
+  color: #fff;
 }
 
 .home-page .hero-panel-secondary {
-  background: #cfe0d1;
-  border-color: rgba(79, 128, 100, 0.28);
-  color: var(--ink);
+  background: var(--london-green);
+  border-color: rgba(255, 249, 239, 0.26);
+  color: #fff;
+}
+
+.home-page .hero-panel .card-label {
+  color: #fff;
+}
+
+.home-page .hero-panel .hero-list {
+  color: #fff;
 }
 
 .home-page .hero-panel .hero-list li::marker {
-  color: var(--teal-deep);
+  color: var(--surface-strong);
 }
 
 .home-page .signal-card,
@@ -519,16 +528,15 @@ body::after {
 .home-page .contact-card,
 .home-page .notice,
 .home-page .cta-panel {
-  background: var(--surface-strong);
-  border-color: rgba(79, 128, 100, 0.2);
+  background: #fff;
+  border-color: rgba(41, 79, 60, 0.18);
   color: var(--ink);
 }
 
 .home-page .signal-card-mission {
-  background: var(--bg);
+  background: #fff;
 }
 
-.home-page .hero-panel .card-label,
 .home-page .signal-card-title,
 .home-page .info-card h3,
 .home-page .contact-card h3,
