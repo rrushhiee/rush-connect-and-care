@@ -297,17 +297,15 @@
             </p>
             <form
               class="enquiry-form newsletter-form"
-              action="https://formsubmit.co/hello@rushconnectandcare.com.au"
+              action="https://api.web3forms.com/submit"
               method="POST"
-              data-rcc-form
-              data-form-endpoint="newsletterEndpoint"
-              data-success-url="/thank-you.html"
             >
-              <input type="hidden" name="_subject" value="New Rush Connect &amp; Care newsletter sign-up">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://rushconnectandcare.com.au/thank-you.html">
+              <input type="hidden" name="access_key" value="c37e1152-91cb-4e6c-8452-8eebfaa3fdb8">
+              <input type="hidden" name="subject" value="New Rush Connect &amp; Care newsletter sign-up">
+              <input type="hidden" name="from_name" value="Rush Connect &amp; Care website">
+              <input type="hidden" name="redirect" value="https://rushconnectandcare.com.au/thank-you.html">
               <input type="hidden" name="form_type" value="Newsletter sign-up">
-              <input type="checkbox" name="botcheck" class="honeypot">
+              <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none;">
 
               <label class="form-field">
                 <span>Name</span>
@@ -375,7 +373,7 @@
             <a href="mailto:hello@rushconnectandcare.com.au">hello@rushconnectandcare.com.au</a>
             <span class="footer-mini-title">Service area</span>
             <span>Online youth mentoring</span>
-            <span>NDIS support in Melbourne VIC and the northern suburbs</span>
+            <span>Support Worker and NDIS services in Melbourne VIC and the northern suburbs</span>
           </div>
         </div>
         <div class="footer-block footer-block-explore">

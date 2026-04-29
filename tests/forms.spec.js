@@ -34,6 +34,34 @@ test("enquiry form is wired to Web3Forms", async ({ page }) => {
   await expect(form.locator('input[name="redirect"]')).toHaveValue("https://rushconnectandcare.com.au/thank-you.html");
 });
 
+test("newsletter form submits through Web3Forms", async ({ page }) => {
+  await page.goto("http://127.0.0.1:4173/");
+
+  await page.route("https://api.web3forms.com/submit", async (route) => {
+    await route.fulfill({
+      status: 303,
+      headers: {
+        location: "http://127.0.0.1:4173/thank-you.html"
+      }
+    });
+  });
+
+  const form = page.locator("form.newsletter-form");
+
+  await expect(form).toHaveAttribute("action", "https://api.web3forms.com/submit");
+  await expect(form).toHaveAttribute("method", "POST");
+  await expect(form.locator('input[name="access_key"]')).toHaveValue("c37e1152-91cb-4e6c-8452-8eebfaa3fdb8");
+  await expect(form.locator('input[name="subject"]')).toHaveValue("New Rush Connect & Care newsletter sign-up");
+  await expect(form.locator('input[name="redirect"]')).toHaveValue("https://rushconnectandcare.com.au/thank-you.html");
+
+  await form.getByLabel("Name").fill("Newsletter Test");
+  await form.getByLabel("Email").fill("newsletter@example.com");
+  await form.getByRole("button", { name: "Join the newsletter" }).click();
+
+  await page.waitForURL("**/thank-you.html");
+  await expect(page.getByRole("heading", { name: "Thank you" })).toBeVisible();
+});
+
 test("booking form submits successfully", async ({ page }) => {
   await page.goto("http://127.0.0.1:4173/book-appointment.html");
 
