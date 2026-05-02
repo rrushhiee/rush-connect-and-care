@@ -991,6 +991,43 @@ body::after {
   padding-bottom: 24px;
 }
 
+.referral-callout {
+  border-color: rgba(41, 79, 60, 0.3);
+  background: #fff;
+}
+
+.referral-callout > p {
+  max-width: 78ch;
+}
+
+.referral-callout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 22px 0;
+}
+
+.referral-callout-block {
+  padding-left: 18px;
+  border-left: 4px solid var(--london-green);
+}
+
+.referral-callout-block h3 {
+  margin: 0 0 12px;
+  color: var(--navy);
+  font-size: 1.15rem;
+}
+
+.referral-contact {
+  margin: 14px 0 0;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.referral-contact a {
+  color: var(--london-green);
+}
+
 .service-list,
 .funding-card ul {
   display: grid;
