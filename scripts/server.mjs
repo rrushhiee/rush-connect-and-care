@@ -36,7 +36,7 @@ const server = http.createServer(async (request, response) => {
     });
     request.on("end", () => {
       if (pathname === "/forms/enquiry") {
-        response.writeHead(303, { Location: "/thank-you.html" });
+        response.writeHead(303, { Location: "/thank-you" });
         response.end();
         return;
       }
@@ -46,13 +46,31 @@ const server = http.createServer(async (request, response) => {
     return;
   }
 
+  if (pathname === "/index.html") {
+    response.writeHead(301, { Location: "/" });
+    response.end();
+    return;
+  }
+
+  if (pathname.endsWith(".html")) {
+    response.writeHead(301, { Location: pathname.replace(/\.html$/, "") });
+    response.end();
+    return;
+  }
+
   if (pathname === "/") {
     pathname = "/index.html";
   }
 
-  const filePath = path.join(root, pathname);
+  let filePath = path.join(root, pathname);
 
   try {
+    if (!path.extname(pathname)) {
+      const htmlPath = path.join(root, `${pathname}.html`);
+      await access(htmlPath);
+      filePath = htmlPath;
+    }
+
     const fileStat = await stat(filePath);
 
     if (fileStat.isDirectory()) {

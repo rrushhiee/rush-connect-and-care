@@ -14,6 +14,12 @@ function redirectTo(requestUrl, location, status = 303) {
   return Response.redirect(new URL(location, requestUrl).toString(), status);
 }
 
+function withPath(request, pathname) {
+  const url = new URL(request.url);
+  url.pathname = pathname;
+  return new Request(url.toString(), request);
+}
+
 async function handleFormProxy(request) {
   const url = new URL(request.url);
   const subject = FORM_SUBJECTS[url.pathname];
@@ -43,7 +49,7 @@ async function handleFormProxy(request) {
     return Response.redirect(returnUrl.toString(), 303);
   }
 
-  return redirectTo(request.url, "/thank-you.html");
+  return redirectTo(request.url, "/thank-you");
 }
 
 export default {
@@ -52,6 +58,22 @@ export default {
 
     if (url.pathname.startsWith("/forms/")) {
       return handleFormProxy(request);
+    }
+
+    if (url.pathname === "/index.html") {
+      return redirectTo(request.url, "/", 301);
+    }
+
+    if (url.pathname.endsWith(".html")) {
+      return redirectTo(request.url, url.pathname.replace(/\.html$/, ""), 301);
+    }
+
+    if (url.pathname !== "/" && !url.pathname.includes(".")) {
+      const htmlResponse = await env.ASSETS.fetch(withPath(request, `${url.pathname}.html`));
+
+      if (htmlResponse.status !== 404) {
+        return htmlResponse;
+      }
     }
 
     return env.ASSETS.fetch(request);

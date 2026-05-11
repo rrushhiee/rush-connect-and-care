@@ -279,7 +279,7 @@ async function handleFormSubmit(event) {
       });
     }
 
-    const successUrl = form.dataset.successUrl || window.RCC_CONFIG?.formSuccessUrl || "thank-you.html";
+    const successUrl = form.dataset.successUrl || window.RCC_CONFIG?.formSuccessUrl || "thank-you";
     storeLeadSuccessPayload(form);
     window.location.assign(successUrl);
   } catch {
