@@ -10,6 +10,28 @@
 
     gtag('config', 'G-K7TYGFWS0X');
   </script>
+  <script>
+    (function () {
+      const key = "rcc_pending_lead";
+
+      try {
+        const raw = window.sessionStorage.getItem(key);
+        if (!raw) {
+          return;
+        }
+
+        const lead = JSON.parse(raw);
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "lead_success",
+          lead
+        });
+        window.sessionStorage.removeItem(key);
+      } catch {
+        // Ignore analytics parsing/storage issues so the thank-you page still loads cleanly.
+      }
+    })();
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thank You | Rush Connect &amp; Care</title>
