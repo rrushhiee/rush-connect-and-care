@@ -714,6 +714,29 @@ body::after {
   border: 1px solid rgba(79, 128, 100, 0.16);
 }
 
+.profile-photo-card {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 18px;
+}
+
+.profile-photo-frame {
+  display: block;
+  width: min(220px, 70vw);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--surface-strong);
+}
+
+.profile-photo-frame img {
+  display: block;
+  width: 106%;
+  height: 106%;
+  object-fit: cover;
+  transform: translate(-3%, -3%);
+}
+
 .story-aside .eyebrow {
   margin-bottom: 10px;
 }
