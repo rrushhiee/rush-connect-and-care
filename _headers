@@ -13,8 +13,14 @@
 /*.png
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
+/*.ico
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
 /*.webp
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/site.webmanifest
+  Cache-Control: public, max-age=0, must-revalidate
 
 /docs/*
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400

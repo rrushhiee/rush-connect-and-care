@@ -12,6 +12,8 @@ const copyableExtensions = new Set([
   ".jpg",
   ".jpeg",
   ".webp",
+  ".ico",
+  ".webmanifest",
   ".svg",
   ".pdf",
   ".docx",
