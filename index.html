@@ -1,40 +1,54 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7TYGFWS0X"></script>
+  <!-- Google Analytics is deferred so content paints before third-party scripts load. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-K7TYGFWS0X');
+    window.addEventListener('load', function () {
+      window.setTimeout(function () {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-K7TYGFWS0X';
+        document.head.appendChild(script);
+        gtag('js', new Date());
+        gtag('config', 'G-K7TYGFWS0X');
+      }, 4500);
+    });
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NDIS Support &amp; Youth Mentoring Melbourne | Rush Connect &amp; Care</title>
+  <title>NDIS Support Melbourne | Referrals &amp; Support Workers</title>
   <meta
     name="description"
-    content="Practical one-to-one NDIS support and youth mentoring in Melbourne, with clear referral pathways for participants, families and support coordinators."
+    content="One-to-one NDIS support and youth mentoring in Melbourne for participants, families, support coordinators, plan managers and community health workers."
   >
   <link rel="canonical" href="https://rushconnectandcare.com.au/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rush Connect &amp; Care">
-  <meta property="og:title" content="NDIS Support &amp; Youth Mentoring Melbourne | Rush Connect &amp; Care">
-  <meta property="og:description" content="Practical one-to-one NDIS support and youth mentoring in Melbourne, with clear referral pathways for participants, families and support coordinators.">
+  <meta property="og:title" content="NDIS Support Melbourne | Referrals &amp; Support Workers">
+  <meta property="og:description" content="One-to-one NDIS support and youth mentoring in Melbourne for participants, families, support coordinators, plan managers and community health workers.">
   <meta property="og:url" content="https://rushconnectandcare.com.au/">
   <meta property="og:image" content="https://rushconnectandcare.com.au/logo-512.png">
   <meta property="og:image:alt" content="Rush Connect &amp; Care logo">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="NDIS Support &amp; Youth Mentoring Melbourne | Rush Connect &amp; Care">
-  <meta name="twitter:description" content="Practical one-to-one NDIS support and youth mentoring in Melbourne, with clear referral pathways for participants, families and support coordinators.">
+  <meta name="twitter:title" content="NDIS Support Melbourne | Referrals &amp; Support Workers">
+  <meta name="twitter:description" content="One-to-one NDIS support and youth mentoring in Melbourne for participants, families, support coordinators, plan managers and community health workers.">
   <meta name="twitter:image" content="https://rushconnectandcare.com.au/logo-512.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
-    rel="stylesheet"
+    rel="preload"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
   >
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    >
+  </noscript>
   <link rel="stylesheet" href="styles.min.css?v=home-badge-london-green">
   <script type="application/ld+json">
   {
@@ -58,12 +72,33 @@
           "@id": "https://rushconnectandcare.com.au/#rupert-rush"
         },
         "serviceType": [
+          "NDIS support",
+          "NDIS support worker services",
+          "Community access support",
+          "Practical one-to-one support",
           "Youth mentoring",
           "Online youth mentoring",
+          "Referral pathway support",
+          "Support worker network pathways"
+        ],
+        "knowsAbout": [
           "NDIS support",
-          "Peer support",
-          "Community access support",
-          "Practical support"
+          "Support coordinators",
+          "Plan managers",
+          "Support workers",
+          "Community health referrals",
+          "Youth mentoring",
+          "Lived experience support"
+        ],
+        "audience": [
+          {
+            "@type": "Audience",
+            "audienceType": "NDIS participants and families"
+          },
+          {
+            "@type": "Audience",
+            "audienceType": "Support coordinators, plan managers, NDIS providers, community health workers, and support workers"
+          }
         ],
         "areaServed": [
           {
@@ -292,6 +327,31 @@
         </div>
       </section>
 
+      <section class="section" aria-labelledby="referrer-search-title">
+        <div class="section-heading">
+          <p class="eyebrow">For referrers and sector partners</p>
+          <h2 id="referrer-search-title">Clear information for people searching for NDIS support</h2>
+        </div>
+        <div class="cards">
+          <article class="info-card">
+            <h3>Support coordinators</h3>
+            <p>Referral-ready details for support coordinators who need a smaller Melbourne NDIS support worker option with clear communication, documents, and practical follow-through.</p>
+          </article>
+          <article class="info-card">
+            <h3>Plan managers</h3>
+            <p>Transparent pricing, insurance evidence, and service information that helps plan managers and families check fit before support begins.</p>
+          </article>
+          <article class="info-card">
+            <h3>Community health workers</h3>
+            <p>A clear pathway for community health workers, recovery coaches, and local services looking for practical one-to-one support options in Melbourne.</p>
+          </article>
+          <article class="info-card">
+            <h3>NDIS providers and CEOs</h3>
+            <p>Useful information for NDIS provider leaders, sole traders, and service partners exploring referral pathways, collaboration, or reliable support worker networks.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="section">
         <div class="cta-panel">
           <div class="section-heading">
@@ -426,7 +486,5 @@
       </div>
     </footer>
   </div>
-  <script src="site-config.min.js?v=20260428-2"></script>
-  <script src="forms.min.js?v=20260428-2"></script>
 </body>
 </html>

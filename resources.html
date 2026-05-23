@@ -1,40 +1,54 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7TYGFWS0X"></script>
+  <!-- Google Analytics is deferred so content paints before third-party scripts load. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-K7TYGFWS0X');
+    window.addEventListener('load', function () {
+      window.setTimeout(function () {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-K7TYGFWS0X';
+        document.head.appendChild(script);
+        gtag('js', new Date());
+        gtag('config', 'G-K7TYGFWS0X');
+      }, 4500);
+    });
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NDIS Resources &amp; Documents Melbourne | Rush Connect &amp; Care</title>
+  <title>NDIS Resources for Referrers | Rush Connect &amp; Care Melbourne</title>
   <meta
     name="description"
-    content="Access Rush Connect &amp; Care service documents, insurance evidence, NDIS training records, employee resources and referral information."
+    content="NDIS resources, insurance evidence, training records and referral documents for support coordinators, plan managers, providers and community teams."
   >
   <link rel="canonical" href="https://rushconnectandcare.com.au/resources">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rush Connect &amp; Care">
-  <meta property="og:title" content="NDIS Resources &amp; Documents Melbourne | Rush Connect &amp; Care">
-  <meta property="og:description" content="Access Rush Connect &amp; Care service documents, insurance evidence, NDIS training records, employee resources and referral information.">
+  <meta property="og:title" content="NDIS Resources for Referrers | Rush Connect &amp; Care Melbourne">
+  <meta property="og:description" content="NDIS resources, insurance evidence, training records and referral documents for support coordinators, plan managers, providers and community teams.">
   <meta property="og:url" content="https://rushconnectandcare.com.au/resources">
   <meta property="og:image" content="https://rushconnectandcare.com.au/logo-512.png">
   <meta property="og:image:alt" content="Rush Connect &amp; Care logo">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="NDIS Resources &amp; Documents Melbourne | Rush Connect &amp; Care">
-  <meta name="twitter:description" content="Access Rush Connect &amp; Care service documents, insurance evidence, NDIS training records, employee resources and referral information.">
+  <meta name="twitter:title" content="NDIS Resources for Referrers | Rush Connect &amp; Care Melbourne">
+  <meta name="twitter:description" content="NDIS resources, insurance evidence, training records and referral documents for support coordinators, plan managers, providers and community teams.">
   <meta name="twitter:image" content="https://rushconnectandcare.com.au/logo-512.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
-    rel="stylesheet"
+    rel="preload"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
   >
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    >
+  </noscript>
   <link rel="stylesheet" href="styles.min.css">
   <script type="application/ld+json">
   {
@@ -58,12 +72,33 @@
           "@id": "https://rushconnectandcare.com.au/#rupert-rush"
         },
         "serviceType": [
+          "NDIS support",
+          "NDIS support worker services",
+          "Community access support",
+          "Practical one-to-one support",
           "Youth mentoring",
           "Online youth mentoring",
+          "Referral pathway support",
+          "Support worker network pathways"
+        ],
+        "knowsAbout": [
           "NDIS support",
-          "Peer support",
-          "Community access support",
-          "Practical support"
+          "Support coordinators",
+          "Plan managers",
+          "Support workers",
+          "Community health referrals",
+          "Youth mentoring",
+          "Lived experience support"
+        ],
+        "audience": [
+          {
+            "@type": "Audience",
+            "audienceType": "NDIS participants and families"
+          },
+          {
+            "@type": "Audience",
+            "audienceType": "Support coordinators, plan managers, NDIS providers, community health workers, and support workers"
+          }
         ],
         "areaServed": [
           {
@@ -370,6 +405,27 @@
             <a class="button button-secondary" href="enquire">Start a referral</a>
             <a class="button button-secondary" href="contact">Contact Rupert</a>
           </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Fast due diligence</p>
+          <h2>Documents for referrers, providers, and community teams</h2>
+        </div>
+        <div class="cards cards-3">
+          <article class="info-card">
+            <h3>Support coordinators and plan managers</h3>
+            <p>Find insurance evidence, NDIS training records, service resources, and referral documents without needing to search across the whole website.</p>
+          </article>
+          <article class="info-card">
+            <h3>NDIS providers and CEOs</h3>
+            <p>Review practical business and compliance information when considering referral relationships, collaboration, or support worker network pathways.</p>
+          </article>
+          <article class="info-card">
+            <h3>Community health workers</h3>
+            <p>Access clear documents and enquiry options for clients who may need practical, non-clinical one-to-one NDIS support in Melbourne.</p>
+          </article>
         </div>
       </section>
     </main>

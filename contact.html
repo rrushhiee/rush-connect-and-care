@@ -1,40 +1,54 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7TYGFWS0X"></script>
+  <!-- Google Analytics is deferred so content paints before third-party scripts load. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-K7TYGFWS0X');
+    window.addEventListener('load', function () {
+      window.setTimeout(function () {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-K7TYGFWS0X';
+        document.head.appendChild(script);
+        gtag('js', new Date());
+        gtag('config', 'G-K7TYGFWS0X');
+      }, 4500);
+    });
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Rush Connect &amp; Care Melbourne</title>
+  <title>Contact Rush Connect &amp; Care | NDIS Support Melbourne</title>
   <meta
     name="description"
-    content="Contact Rush Connect &amp; Care for NDIS support, youth mentoring, referrals, consults and local one-to-one support in Melbourne and northern suburbs."
+    content="Contact Rush Connect &amp; Care for NDIS support, referrals, youth mentoring, support worker interest and community health referral enquiries."
   >
   <link rel="canonical" href="https://rushconnectandcare.com.au/contact">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rush Connect &amp; Care">
-  <meta property="og:title" content="Contact Rush Connect &amp; Care Melbourne">
-  <meta property="og:description" content="Contact Rush Connect &amp; Care for NDIS support, youth mentoring, referrals, consults and local one-to-one support in Melbourne and northern suburbs.">
+  <meta property="og:title" content="Contact Rush Connect &amp; Care | NDIS Support Melbourne">
+  <meta property="og:description" content="Contact Rush Connect &amp; Care for NDIS support, referrals, youth mentoring, support worker interest and community health referral enquiries.">
   <meta property="og:url" content="https://rushconnectandcare.com.au/contact">
   <meta property="og:image" content="https://rushconnectandcare.com.au/logo-512.png">
   <meta property="og:image:alt" content="Rush Connect &amp; Care logo">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Contact Rush Connect &amp; Care Melbourne">
-  <meta name="twitter:description" content="Contact Rush Connect &amp; Care for NDIS support, youth mentoring, referrals, consults and local one-to-one support in Melbourne and northern suburbs.">
+  <meta name="twitter:title" content="Contact Rush Connect &amp; Care | NDIS Support Melbourne">
+  <meta name="twitter:description" content="Contact Rush Connect &amp; Care for NDIS support, referrals, youth mentoring, support worker interest and community health referral enquiries.">
   <meta name="twitter:image" content="https://rushconnectandcare.com.au/logo-512.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
-    rel="stylesheet"
+    rel="preload"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
   >
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    >
+  </noscript>
   <link rel="stylesheet" href="styles.min.css">
   <script type="application/ld+json">
   {
@@ -58,12 +72,33 @@
           "@id": "https://rushconnectandcare.com.au/#rupert-rush"
         },
         "serviceType": [
+          "NDIS support",
+          "NDIS support worker services",
+          "Community access support",
+          "Practical one-to-one support",
           "Youth mentoring",
           "Online youth mentoring",
+          "Referral pathway support",
+          "Support worker network pathways"
+        ],
+        "knowsAbout": [
           "NDIS support",
-          "Peer support",
-          "Community access support",
-          "Practical support"
+          "Support coordinators",
+          "Plan managers",
+          "Support workers",
+          "Community health referrals",
+          "Youth mentoring",
+          "Lived experience support"
+        ],
+        "audience": [
+          {
+            "@type": "Audience",
+            "audienceType": "NDIS participants and families"
+          },
+          {
+            "@type": "Audience",
+            "audienceType": "Support coordinators, plan managers, NDIS providers, community health workers, and support workers"
+          }
         ],
         "areaServed": [
           {

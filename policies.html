@@ -1,14 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7TYGFWS0X"></script>
+  <!-- Google Analytics is deferred so content paints before third-party scripts load. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-K7TYGFWS0X');
+    window.addEventListener('load', function () {
+      window.setTimeout(function () {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-K7TYGFWS0X';
+        document.head.appendChild(script);
+        gtag('js', new Date());
+        gtag('config', 'G-K7TYGFWS0X');
+      }, 4500);
+    });
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,8 +39,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
-    rel="stylesheet"
+    rel="preload"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
   >
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    >
+  </noscript>
   <link rel="stylesheet" href="styles.min.css">
   <script type="application/ld+json">
   {
@@ -58,12 +72,33 @@
           "@id": "https://rushconnectandcare.com.au/#rupert-rush"
         },
         "serviceType": [
+          "NDIS support",
+          "NDIS support worker services",
+          "Community access support",
+          "Practical one-to-one support",
           "Youth mentoring",
           "Online youth mentoring",
+          "Referral pathway support",
+          "Support worker network pathways"
+        ],
+        "knowsAbout": [
           "NDIS support",
-          "Peer support",
-          "Community access support",
-          "Practical support"
+          "Support coordinators",
+          "Plan managers",
+          "Support workers",
+          "Community health referrals",
+          "Youth mentoring",
+          "Lived experience support"
+        ],
+        "audience": [
+          {
+            "@type": "Audience",
+            "audienceType": "NDIS participants and families"
+          },
+          {
+            "@type": "Audience",
+            "audienceType": "Support coordinators, plan managers, NDIS providers, community health workers, and support workers"
+          }
         ],
         "areaServed": [
           {
@@ -242,19 +277,17 @@
       <section class="section">
         <div class="section-heading">
           <p class="eyebrow">Policies</p>
-          <h2>Website tools and newsletter</h2>
+          <h2>Website tools and enquiries</h2>
         </div>
         <div class="service-panel">
           <p class="accent-text">
-            Rush Connect &amp; Care uses website and email tools such as Google
-            Analytics, Web3Forms, and Mailchimp to understand website activity,
-            receive enquiries, and manage newsletter sign-ups.
+            Rush Connect &amp; Care uses website tools such as Google Analytics
+            and Web3Forms to understand website activity and receive enquiries.
           </p>
           <ul class="service-list">
-            <li>Newsletter details are used for Rush Connect &amp; Care updates.</li>
             <li>Form details are used to respond to enquiries and booking requests.</li>
             <li>Information is not sold or used for unrelated marketing.</li>
-            <li>You can ask to stop receiving updates at any time.</li>
+            <li>You can ask to stop receiving non-essential contact at any time.</li>
           </ul>
         </div>
       </section>
