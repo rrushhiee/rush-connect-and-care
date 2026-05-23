@@ -155,17 +155,6 @@ body::after {
 
 .nav-dropdown-trigger {
   position: relative;
-  gap: 8px;
-}
-
-.nav-dropdown-trigger::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg) translateY(-1px);
-  transform-origin: center;
 }
 
 .nav-dropdown-menu {
