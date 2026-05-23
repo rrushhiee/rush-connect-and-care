@@ -614,6 +614,14 @@ body::after {
   max-width: 74ch;
 }
 
+.signal-card-note {
+  padding: 14px 20px;
+}
+
+.signal-card-note .signal-card-title {
+  margin-bottom: 0;
+}
+
 .signal-card-title {
   margin: 0 0 8px;
   color: var(--teal-deep);
