@@ -289,9 +289,9 @@ body::after {
 }
 
 .hero-copy h1 {
-  max-width: 12ch;
-  font-size: clamp(2.9rem, 6vw, 5.4rem);
-  line-height: 0.94;
+  max-width: 15.5ch;
+  font-size: clamp(2.45rem, 4.7vw, 4.45rem);
+  line-height: 1;
 }
 
 .enquiry-hero h1 {
@@ -337,6 +337,14 @@ body::after {
   margin: 18px 0 0;
   font-size: 1.06rem;
   color: var(--ink-soft);
+}
+
+.hero-proposition {
+  max-width: 58ch;
+  margin: 20px 0 0;
+  font-size: clamp(1.18rem, 2vw, 1.48rem);
+  line-height: 1.48;
+  color: var(--ink);
 }
 
 .hero-actions {
