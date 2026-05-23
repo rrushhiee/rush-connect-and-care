@@ -28,7 +28,11 @@ const ignoredFiles = [
   /^audit-.*\.(png|jpg|jpeg)$/i,
   /^homepage-preview\.png$/i,
   /^logo\.png$/i,
-  /^ndis-logo\.jpg$/i
+  /^ndis-logo\.jpg$/i,
+  /^styles\.css$/i,
+  /^forms\.js$/i,
+  /^site-config\.js$/i,
+  /^stylelint\.config\.js$/i
 ];
 
 await rm(dist, { recursive: true, force: true });
