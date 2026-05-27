@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/minify-assets.mjs && node scripts/build.mjs",
-    "lint:html": "htmlhint \"*.html\"",
+    "lint:html": "node scripts/lint-html.mjs",
     "lint:css": "stylelint \"styles.css\"",
     "lint": "npm run lint:html && npm run lint:css",
     "serve:dist": "node scripts/server.mjs",
