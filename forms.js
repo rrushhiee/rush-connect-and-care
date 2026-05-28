@@ -197,9 +197,13 @@ function shouldSubmitAsJson(endpoint) {
   return JSON_ENDPOINT_MATCHERS.some((matcher) => endpoint.includes(matcher));
 }
 
-function shouldUseNativeSubmit(endpoint) {
+function shouldUseNativeSubmit(endpoint, form) {
   const endpointUrl = new URL(endpoint, window.location.href);
-  return endpointUrl.origin === window.location.origin && endpointUrl.pathname.startsWith("/forms/");
+
+  return (
+    form?.hasAttribute("data-native-submit") ||
+    (endpointUrl.origin === window.location.origin && endpointUrl.pathname.startsWith("/forms/"))
+  );
 }
 
 function canEnhanceForms() {
@@ -222,6 +226,24 @@ function buildJsonPayload(form) {
   return JSON.stringify(payload);
 }
 
+async function assertSuccessfulJsonResponse(response) {
+  if (!response.ok) {
+    throw new Error(`Form request failed with status ${response.status}`);
+  }
+
+  const contentType = response.headers.get("content-type") || "";
+
+  if (!contentType.includes("application/json")) {
+    return;
+  }
+
+  const payload = await response.clone().json();
+
+  if (payload.success === false || payload.success === "false") {
+    throw new Error(payload.message || "Form provider returned an error");
+  }
+}
+
 async function handleFormSubmit(event) {
   if (!canEnhanceForms()) {
     return;
@@ -230,7 +252,7 @@ async function handleFormSubmit(event) {
   const form = event.currentTarget;
   const endpoint = getEndpoint(form);
 
-  if (shouldUseNativeSubmit(endpoint)) {
+  if (shouldUseNativeSubmit(endpoint, form)) {
     return;
   }
 
@@ -268,7 +290,9 @@ async function handleFormSubmit(event) {
         body: submitAsJson ? buildJsonPayload(form) : new FormData(form)
       });
 
-      if (!response.ok) {
+      if (submitAsJson) {
+        await assertSuccessfulJsonResponse(response);
+      } else if (!response.ok) {
         throw new Error(`Form request failed with status ${response.status}`);
       }
     } else {
