@@ -160,8 +160,11 @@ function storeLeadSuccessPayload(form) {
   const email = inferEmail(values);
   const phone = inferPhone(values);
   const message = normaliseValue(values.message);
+  const formType = normaliseValue(values.form_type).toLowerCase();
+  const leadType = formType.includes("booking") ? "booking_request" : "enquiry";
 
   const payload = {
+    lead_type: leadType,
     plan_status: inferPlanStatus(values),
     phone_present: Boolean(phone),
     email_valid: looksLikeEmail(email),

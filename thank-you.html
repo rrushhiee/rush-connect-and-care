@@ -5,14 +5,14 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K7TYGFWS0X');
     window.addEventListener('load', function () {
       window.setTimeout(function () {
         var script = document.createElement('script');
         script.async = true;
         script.src = 'https://www.googletagmanager.com/gtag/js?id=G-K7TYGFWS0X';
         document.head.appendChild(script);
-        gtag('js', new Date());
-        gtag('config', 'G-K7TYGFWS0X');
       }, 4500);
     });
   </script>
@@ -28,9 +28,13 @@
 
         const lead = JSON.parse(raw);
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "lead_success",
-          lead
+        gtag("event", "generate_lead", {
+          lead_type: lead.lead_type || "enquiry",
+          plan_status: lead.plan_status || "no",
+          phone_present: Boolean(lead.phone_present),
+          email_valid: Boolean(lead.email_valid),
+          message_len: Number(lead.message_len) || 0,
+          booking_within_7days: Boolean(lead.booking_within_7days)
         });
         window.sessionStorage.removeItem(key);
       } catch {

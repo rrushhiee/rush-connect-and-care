@@ -21,6 +21,19 @@ test("enquiry form submits successfully", async ({ page }) => {
 
   await page.waitForURL("**/thank-you");
   await expect(page.getByRole("heading", { name: "Thank you" })).toBeVisible();
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        window.dataLayer?.some(
+          (entry) =>
+            entry &&
+            entry[0] === "event" &&
+            entry[1] === "generate_lead" &&
+            entry[2]?.lead_type === "enquiry"
+        )
+      )
+    )
+    .toBe(true);
 });
 
 test("enquiry form is wired to Web3Forms", async ({ page }) => {
@@ -46,4 +59,17 @@ test("booking form submits successfully", async ({ page }) => {
 
   await page.waitForURL("**/thank-you");
   await expect(page.getByRole("heading", { name: "Thank you" })).toBeVisible();
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        window.dataLayer?.some(
+          (entry) =>
+            entry &&
+            entry[0] === "event" &&
+            entry[1] === "generate_lead" &&
+            entry[2]?.lead_type === "booking_request"
+        )
+      )
+    )
+    .toBe(true);
 });
