@@ -799,6 +799,15 @@ body::after {
   font-weight: 700;
 }
 
+.article-kicker {
+  max-width: 58ch;
+  margin: 4px 0 0;
+  color: var(--navy);
+  font-size: clamp(1.1rem, 2vw, 1.32rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .article-entry {
   display: grid;
   gap: 18px;
