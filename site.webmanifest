@@ -1,7 +1,7 @@
 {
   "name": "Rush Connect & Care",
   "short_name": "Rush Connect",
-  "description": "Youth mentoring, NDIS support, community access support, and practical one-to-one support in Melbourne.",
+  "description": "NDIS support, peer support, community access support, and practical one-to-one support in Melbourne.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

@@ -14,7 +14,7 @@ Google guidance says service-area businesses can list up to 20 service areas and
 - Independent NDIS support worker
 - Community access support
 - Psychosocial support
-- Youth mentoring
+- Practical peer support
 - Overnight support
 - Transport support
 - Routine building support
@@ -24,7 +24,7 @@ Google guidance says service-area businesses can list up to 20 service areas and
 
 ## Business Description
 
-Rush Connect & Care provides smaller-scale one-to-one NDIS support and youth mentoring across Melbourne, with a focus on the inner and northern suburbs. RCC currently operates as an unregistered provider and is most suited to self-managed and plan-managed participants where funding fit is confirmed. Support may include community access, routine building, transport, appointments, social connection, overnight reassurance and practical goal follow-through. The service is built around lived experience, clear communication, transparent pricing and a practical alternative to large-provider environments.
+Rush Connect & Care provides smaller-scale one-to-one NDIS support and practical peer support across Melbourne, with a focus on the inner and northern suburbs. RCC currently operates as an unregistered provider and is most suited to self-managed and plan-managed participants where funding fit is confirmed. Support may include community access, routine building, transport, appointments, social connection, overnight reassurance and practical goal follow-through. The service is built around lived experience, clear communication, transparent pricing and a practical alternative to large-provider environments.
 
 ## Weekly Google Post Template
 

@@ -15,7 +15,7 @@ test("enquiry form submits successfully", async ({ page }) => {
   await page.getByLabel("Name").fill("Rupert Test");
   await page.getByLabel("Email address").fill("rupert@example.com");
   await page.getByLabel("Phone number optional").fill("0423 815 267");
-  await page.getByLabel("What are you enquiring about?").selectOption("Online youth mentoring");
+  await page.getByLabel("What are you enquiring about?").selectOption("Practical peer support");
   await page.getByLabel("Short message").fill("I am checking the enquiry form flow.");
   await page.getByRole("button", { name: "Send enquiry" }).click();
 
