@@ -1617,6 +1617,36 @@ body::after {
   font-weight: 700;
 }
 
+.coordinator-intro h1 {
+  margin: 0;
+  font: 400 clamp(2.5rem, 5vw, 4rem)/1.08 "DM Serif Display", Georgia, serif;
+}
+
+#refer {
+  scroll-margin-top: 24px;
+}
+
+#refer .enquiry-form {
+  margin-top: 24px;
+}
+
+.referral-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.referral-consent input {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  accent-color: var(--action);
+}
+
 /* Warm editorial identity, shared by service pages and articles. */
 .page-shell {
   border-radius: 12px;

@@ -1,5 +1,5 @@
 const LOCAL_TEST_HOSTS = new Set(["127.0.0.1", "localhost"]);
-const JSON_ENDPOINT_MATCHERS = ["formsubmit.co/ajax/"];
+const JSON_ENDPOINT_MATCHERS = ["formsubmit.co/ajax/", "api.web3forms.com/submit"];
 const LEAD_STORAGE_KEY = "rcc_pending_lead";
 const ATTRIBUTION_STORAGE_KEY = "rcc_attribution";
 const SESSION_ID_STORAGE_KEY = "rcc_session_id";
@@ -92,6 +92,7 @@ function buildLeadFieldMap(form) {
   const values = {};
   const formData = new FormData(form);
   formData.delete("_honey");
+
   formData.delete("botcheck");
 
   for (const [key, value] of formData.entries()) {
@@ -221,6 +222,8 @@ function buildJsonPayload(form) {
   const payload = {};
   const formData = new FormData(form);
   formData.delete("_honey");
+  /* AJAX needs the provider's JSON acknowledgement, not a redirect response. */
+  formData.delete("redirect");
 
   for (const [key, value] of formData.entries()) {
     payload[key] = typeof value === "string" ? value.trim() : value;
@@ -229,7 +232,7 @@ function buildJsonPayload(form) {
   return JSON.stringify(payload);
 }
 
-async function assertSuccessfulJsonResponse(response) {
+async function assertSuccessfulJsonResponse(response, requireSuccess = false) {
   if (!response.ok) {
     throw new Error(`Form request failed with status ${response.status}`);
   }
@@ -237,12 +240,13 @@ async function assertSuccessfulJsonResponse(response) {
   const contentType = response.headers.get("content-type") || "";
 
   if (!contentType.includes("application/json")) {
+    if (requireSuccess) throw new Error("Missing submission acknowledgement");
     return;
   }
 
   const payload = await response.clone().json();
 
-  if (payload.success === false || payload.success === "false") {
+  if (payload.success === false || payload.success === "false" || (requireSuccess && payload.success !== true)) {
     throw new Error(payload.message || "Form provider returned an error");
   }
 }
@@ -294,7 +298,7 @@ async function handleFormSubmit(event) {
       });
 
       if (submitAsJson) {
-        await assertSuccessfulJsonResponse(response);
+        await assertSuccessfulJsonResponse(response, new URL(endpoint, window.location.href).hostname === "api.web3forms.com");
       } else if (!response.ok) {
         throw new Error(`Form request failed with status ${response.status}`);
       }
